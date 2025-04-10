@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    /* @apply dark:bg-trueGray-900; */
+    font-family: "Inter", sans-serif !important;
+  }
+
+  /* Thin, rounded scrollbar with gradient */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #a1a0a0;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #f3f4f6, #f3f4f6);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #f3f4f6, #f3f4f6);
+  }
+
+  .scroll-left {
+    direction: rtl; /* Right-to-left layout */
+  }
+
+  .scroll-left div {
+    direction: ltr; /* Reset content direction to normal */
+  }
+
+  .blur-box {
+    position: relative;
+    z-index: 0; /* Ensure text is above */
+  }
+
+  .blur-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Puts the blurred layer behind */
+    border-radius: 12px;
+    border: 2px solid #2c3977;
+  }
+
+  .gradient-box {
+    position: relative;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .gradient-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(to bottom right, #283373 , #46537a);
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+    border-radius: inherit;
+  }
+
+  .gradient-r-box {
+    position: relative;
+    padding: 20px;
+    border-radius: 0px 12px 12px 0px;
+  }
+
+  .gradient-r-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px 2px 2px 0px; /* Border thickness */
+    background: linear-gradient(to bottom right, #283373 , #46537a);
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+    border-radius: inherit;
+  }
+
+  .gradient-box1 {
+    position: relative;
+    border-radius: 12px;
+  }
+
+  .gradient-box1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(to bottom right, #283373 , #46537a);
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+    border-radius: inherit;
+  }
+
+  .gradient-r-box1 {
+    position: relative;
+    padding: 20px;
+    border-radius: 12px 12px 0px 0px;
+  }
+
+  .gradient-r-box1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px 2px 0px 2px; /* Border thickness */
+    background: linear-gradient(to bottom right, #283373 , #46537a);
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+    border-radius: inherit;
+  }
+
+  .component-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px; /* For horizontal scrollbar */
+    border: 1px solid #5851E8;
+  }
+  
+  /* Track (background) */
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  
+  /* Handle (thumb) */
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #5851E8, #D6D3FF);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #5851E8, #D6D3FF);
+  }
+
+}
