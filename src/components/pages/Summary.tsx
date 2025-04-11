@@ -11,6 +11,7 @@ import TotalBridgeVolumeLineChart from "../charts/summary/TotalBridgeVolumeLineC
 import LiquidityHeldLineChart from "../charts/summary/LiquidityHeldLineChart";
 import PAWTokenPriceLineChart from "../charts/summary/PAWTokenPriceLineChart";
 import TotalFeesLineChart from "../charts/summary/TotalFeesLineChart";
+import { PhoneHeader } from "./PhoneHeader";
 
 // Import the component dynamically, disabling SSR
 const PAWTokensLockedPieChart = dynamic(() => import("../charts/summary/PAWTokensLockedPieChart"), { ssr: false });
@@ -19,24 +20,7 @@ export const Summary = () => {
 
   return (
     <>
-      <div className="md:hidden flex flex-row justify-between items-center">
-        <Image
-          className="h-[30px] w-[26px]"
-          src="/images/Paw Chain logo.png"
-          alt="Paw Chain Logo"
-          width={26.34}
-          height={39}
-        />
-        <div className="relative w-8 h-8 p-0.5 rounded-lg bg-gradient-to-r from-[#5851E8] to-[#D6D3FF]">
-          <div className="flex items-center justify-center w-full h-full bg-[#021F6A] rounded-md">
-            <svg className="w-6 h-6 text-[#5851E8]" fill="currentColor" viewBox="0 0 24 24">
-              <rect x="4" y="6" width="16" height="2" rx="1"/>
-              <rect x="4" y="11" width="16" height="2" rx="1"/>
-              <rect x="4" y="16" width="16" height="2" rx="1"/>
-            </svg>
-          </div>
-        </div>
-      </div>
+      <PhoneHeader/>
       <div className="md:hidden flex flex-row justify-center items-center">
         <span className="font-bold text-[36px]">Summary</span>
       </div>

@@ -6,29 +6,13 @@ import TotalStakedTokensRadialBarChart from "../charts/staking/TotalStakedTokens
 import StakingAreaChart from "../charts/staking/StakingAreaChart";
 import StakingRewardsLineChart from "../charts/staking/StakingRewardsLineChart";
 import StakingParticipationRateStackedAreaChart from "../charts/staking/StakingParticipationRateStackedAreaChart";
+import { PhoneHeader } from "./PhoneHeader";
 
 export const Staking = () => {
 
   return (
     <>
-      <div className="md:hidden flex flex-row justify-between items-center">
-            <Image
-              className="h-[30px] w-[26px]"
-              src="/images/Paw Chain logo.png"
-              alt="Paw Chain Logo"
-              width={26.34}
-              height={39}
-            />
-            <div className="relative w-8 h-8 p-0.5 rounded-lg bg-gradient-to-r from-[#5851E8] to-[#D6D3FF]">
-              <div className="flex items-center justify-center w-full h-full bg-[#021F6A] rounded-md">
-                <svg className="w-6 h-6 text-[#5851E8]" fill="currentColor" viewBox="0 0 24 24">
-                  <rect x="4" y="6" width="16" height="2" rx="1"/>
-                  <rect x="4" y="11" width="16" height="2" rx="1"/>
-                  <rect x="4" y="16" width="16" height="2" rx="1"/>
-                </svg>
-              </div>
-            </div>
-      </div>
+      <PhoneHeader/>
       <div className="md:hidden flex flex-row justify-center items-center">
           <span className="font-bold text-[36px]">Staking</span>
       </div>
@@ -42,6 +26,7 @@ export const Staking = () => {
         />
         <span className="font-bold text-[36px]">Staking</span>
       </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-3 mt-4 mb-4 lg:gap-[20px]">
         <div className="col-span-1 gradient-box mb-4 lg:mb-0">
           <TotalStakedTokensRadialBarChart />

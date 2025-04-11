@@ -5,28 +5,12 @@ import Image from "next/image"
 import TVLPieChart from "../charts/total_value_locked/TVLPieChart";
 import TVLStackedBarChart from "../charts/total_value_locked/TVLStackedBarChart";
 import TVLGrowthBarChart from "../charts/total_value_locked/TVLGrowthBarChart";
+import { PhoneHeader } from "./PhoneHeader";
 
 export const TotalValueLocked = () => {
   return (
     <>
-      <div className="md:hidden flex flex-row justify-between items-center">
-        <Image
-          className="h-[30px] w-[26px]"
-          src="/images/Paw Chain logo.png"
-          alt="Paw Chain Logo"
-          width={26.34}
-          height={39}
-        />
-        <div className="relative w-8 h-8 p-0.5 rounded-lg bg-gradient-to-r from-[#5851E8] to-[#D6D3FF]">
-          <div className="flex items-center justify-center w-full h-full bg-[#021F6A] rounded-md">
-            <svg className="w-6 h-6 text-[#5851E8]" fill="currentColor" viewBox="0 0 24 24">
-              <rect x="4" y="6" width="16" height="2" rx="1"/>
-              <rect x="4" y="11" width="16" height="2" rx="1"/>
-              <rect x="4" y="16" width="16" height="2" rx="1"/>
-            </svg>
-          </div>
-        </div>
-      </div>
+      <PhoneHeader />
       <div className="md:hidden flex flex-row justify-center items-center">
           <span className="font-bold text-[30px]">Total Value Locked</span>
       </div>
