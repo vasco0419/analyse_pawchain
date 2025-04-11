@@ -11,7 +11,7 @@ export const PawWalletNamingService = () => {
     <>
       <PhoneHeader/>
       <div className="md:hidden flex flex-row justify-center items-center">
-          <span className="font-bold text-[32px]">Wallet Naming Service</span>
+          <span className="font-bold text-[24px]">Wallet Naming Service</span>
       </div> 
       <div className="hidden md:flex flex-row justify-between items-center">
         <Image
