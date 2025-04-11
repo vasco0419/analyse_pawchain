@@ -88,6 +88,15 @@ export const PhoneHeader = () => {
                         <span className="w-full h-[1px] bg-blue-400"></span>
                     </div>
                 </div>
+                <div className="fixed bottom-4 w-full flex justify-center items-center">
+                     <Image
+                        className="h-[22px] w-[116px]"
+                        src="/assets/images/Paw Chain logo.png"
+                        alt="Paw Chain Logo"
+                        width={116}
+                        height={22}
+                    />
+                </div>
             </div>
         )}
         </div>

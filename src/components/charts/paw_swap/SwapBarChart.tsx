@@ -39,40 +39,40 @@ const SwapBarChart = () => {
         </div>
       </div>
       <ResponsiveContainer width="100%" height={300}>
-      <BarChart data={data}
-        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-        <defs>
-          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#749AFF" stopOpacity={1}/>
-            <stop offset="95%" stopColor="#294AA4" stopOpacity={0.2}/>
-          </linearGradient>
-        </defs>
-        <XAxis
-            dataKey="time"
-            height={40}
-            tickLine={false}
-            tick={{
-              fontSize: 12,
-              fill: "#F3F4F6",
-              fontWeight: 300,
-            }}
-            tickMargin={20}
-            stroke="white"
-            strokeWidth={3}  // Set stroke thickness (default is 1)
-            angle={-90}
-            interval={0}
-          />
-          <YAxis
-            width={30}
-            tickLine={false}
-            tick={{ fontSize: 12, fill: "#F3F4F6", fontWeight: 300 }}
-            tickFormatter={(value) => `${value}`} // Add "m" suffix for millions
-            stroke="white"
-            strokeWidth={3}  // Set stroke thickness (default is 1)
-          />
-        <Tooltip />
-        <Bar type="monotone" dataKey="APY" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-      </BarChart>
+        <BarChart data={data}
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+          <defs>
+            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#749AFF" stopOpacity={1}/>
+              <stop offset="95%" stopColor="#294AA4" stopOpacity={0.2}/>
+            </linearGradient>
+          </defs>
+          <XAxis
+              dataKey="time"
+              height={40}
+              tickLine={false}
+              tick={{
+                fontSize: 12,
+                fill: "#F3F4F6",
+                fontWeight: 300,
+              }}
+              tickMargin={20}
+              stroke="white"
+              strokeWidth={3}  // Set stroke thickness (default is 1)
+              angle={-90}
+              interval={0}
+            />
+            <YAxis
+              width={30}
+              tickLine={false}
+              tick={{ fontSize: 12, fill: "#F3F4F6", fontWeight: 300 }}
+              tickFormatter={(value) => `${value}`} // Add "m" suffix for millions
+              stroke="white"
+              strokeWidth={3}  // Set stroke thickness (default is 1)
+            />
+          <Tooltip />
+          <Bar type="monotone" dataKey="APY" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+        </BarChart>
       </ResponsiveContainer>
     </div>
   );

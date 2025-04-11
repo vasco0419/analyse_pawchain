@@ -7,6 +7,7 @@ import StakingAreaChart from "../charts/staking/StakingAreaChart";
 import StakingRewardsLineChart from "../charts/staking/StakingRewardsLineChart";
 import StakingParticipationRateStackedAreaChart from "../charts/staking/StakingParticipationRateStackedAreaChart";
 import { PhoneHeader } from "./PhoneHeader";
+import { PhoneFooter } from "./PhoneFooter";
 
 export const Staking = () => {
 
@@ -75,15 +76,7 @@ export const Staking = () => {
           </div>
         </div>
       </div>
-      <div className="md:hidden flex flex-row justify-center items-center mt-4">
-            <Image
-                className="h-[22px] w-[116px]"
-                src="/assets/images/Paw Chain logo.png"
-                alt="Paw Chain Logo"
-                width={116}
-                height={22}
-              />
-      </div>
+      <PhoneFooter/>
       <div className="hidden md:block lg:hidden mt-12">
       </div>
     </>

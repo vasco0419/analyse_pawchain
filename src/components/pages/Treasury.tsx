@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image"
 import TreasuryStackedBarChart from "../charts/treasury/TreasuryStackedBarChart";
 import { PhoneHeader } from "./PhoneHeader";
+import { PhoneFooter } from "./PhoneFooter";
 
 const legendItems = [
   { label: 'From Swaps', color: 'bg-blue-600' },
@@ -63,15 +64,7 @@ export const Treasury = () => {
           </div>
           <TreasuryStackedBarChart />
       </div>
-      <div className="md:hidden flex flex-row justify-center items-center mt-4">
-          <Image
-              className="h-[22px] w-[116px]"
-              src="/assets/images/Paw Chain logo.png"
-              alt="Paw Chain Logo"
-              width={116}
-              height={22}
-            />
-      </div>
+      <PhoneFooter/>
     </>
   );
 }

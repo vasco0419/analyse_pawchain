@@ -5,6 +5,7 @@ import Image from "next/image"
 import SwapBarChart from '../charts/paw_swap/SwapBarChart'
 import SwapPieChart from "../charts/paw_swap/SwapPieChart";
 import { PhoneHeader } from "./PhoneHeader";
+import { PhoneFooter } from "./PhoneFooter";
 
 export const PawSwap = () => {
   return (
@@ -58,15 +59,7 @@ export const PawSwap = () => {
               <SwapPieChart/>
           </div>     
       </div>
-      <div className="md:hidden flex flex-row justify-center items-center mt-4">
-          <Image
-              className="h-[22px] w-[116px]"
-              src="/assets/images/Paw Chain logo.png"
-              alt="Paw Chain Logo"
-              width={116}
-              height={22}
-            />
-      </div>
+      <PhoneFooter/>
     </>
   );
 }

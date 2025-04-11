@@ -5,6 +5,7 @@ import Image from "next/image"
 import BridgeFeeBarChart from "../charts/bridge/BridgeFeeBarChart";
 import BridgeVolumeChart from "../charts/bridge/BridgeVolumeBarChart";
 import { PhoneHeader } from "./PhoneHeader";
+import { PhoneFooter } from "./PhoneFooter";
 
 export const Bridge = () => {
   return (
@@ -153,15 +154,7 @@ export const Bridge = () => {
          </div>
       </div>
 
-      <div className="md:hidden flex flex-row justify-center items-center mt-4">
-          <Image
-              className="h-[22px] w-[116px]"
-              src="/assets/images/Paw Chain logo.png"
-              alt="Paw Chain Logo"
-              width={116}
-              height={22}
-            />
-      </div>
+      <PhoneFooter/>
       <div className="hidden md:block lg:hidden mt-12">
       </div>
     </>

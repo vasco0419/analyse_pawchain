@@ -6,6 +6,7 @@ import TVLPieChart from "../charts/total_value_locked/TVLPieChart";
 import TVLStackedBarChart from "../charts/total_value_locked/TVLStackedBarChart";
 import TVLGrowthBarChart from "../charts/total_value_locked/TVLGrowthBarChart";
 import { PhoneHeader } from "./PhoneHeader";
+import { PhoneFooter } from "./PhoneFooter";
 
 export const TotalValueLocked = () => {
   return (
@@ -45,15 +46,7 @@ export const TotalValueLocked = () => {
       <div className="grid grid-cols-1 gradient-box1 md:gradient-box mt-4">
           <TVLGrowthBarChart/>
       </div>
-      <div className="md:hidden flex flex-row justify-center items-center mt-4">
-          <Image
-              className="h-[22px] w-[116px]"
-              src="/assets/images/Paw Chain logo.png"
-              alt="Paw Chain Logo"
-              width={116}
-              height={22}
-            />
-      </div>
+      <PhoneFooter/>
       <div className="hidden md:block lg:hidden mt-12">
       </div>
     </>

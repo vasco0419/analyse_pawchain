@@ -38,21 +38,21 @@ const TransactionTable = () => {
         </div>
 
         <div className="flex flex-row justify-between items-center px-3 py-1">
-            <span className="font-bold text-[16px]">Transaction ID</span>
-            <span className="font-bold text-[16px]">Wallet</span>
-            <span className="font-bold text-[16px]">New Name</span>
+            <span className="font-bold text-[15px] md:text-[16px]">Transaction ID</span>
+            <span className="font-bold text-[15px] md:text-[16px]">Wallet</span>
+            <span className="font-bold text-[15px] md:text-[16px]">New Name</span>
         </div>
         
         { transactions.map((tx, index) => (
           <div key={index} className="flex flex-row justify-between items-center px-3 py-1">
-              <span  className="text-[16px]"
+              <span  className="text-[13px] md:text-[16px]"
                     style={{
                       background: 'linear-gradient(to right, #D3D6FF, #5851E8)',
                       WebkitBackgroundClip: 'text',
                       color: 'transparent',
                     }}> {tx.id} </span>
-              <span className="text-[16px]">{tx.wallet}</span>
-              <span className="text-[16px]">{tx.newName}</span>
+              <span className="text-[13px] md:text-[16px]">{tx.wallet}</span>
+              <span className="text-[13px] md:text-[16px]">{tx.newName}</span>
           </div>  
         ))}
     </>
