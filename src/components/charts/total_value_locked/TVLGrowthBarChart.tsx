@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BarChart,
   Bar,
@@ -10,46 +10,14 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export const chartData = [
-  { month: "06/22", Positive: 20, Negative: -20 },
-  { month: "07/22", Positive: 30, Negative: -30 },
-  { month: "08/22", Positive: 10, Negative: -10 },
-  { month: "09/22", Positive: 25, Negative: -25 },
-  { month: "10/22", Positive: 15, Negative: -15 },
-  { month: "11/22", Positive: 20, Negative: -20 },
-  { month: "12/22", Positive: 10, Negative: -10 },
-  { month: "01/23", Positive: 15, Negative: -15 },
-  { month: "02/23", Positive: 20, Negative: -20 },
-  { month: "03/23", Positive: 30, Negative: -30 },
-  { month: "04/23", Positive: 25, Negative: -25 },
-  { month: "05/23", Positive: 15, Negative: -15 },
-  { month: "06/23", Positive: 20, Negative: -20 },
-  { month: "07/23", Positive: 10, Negative: -10 },
-  { month: "08/23", Positive: 15, Negative: -15 },
-  { month: "09/23", Positive: 10, Negative: -10 },
-  { month: "10/23", Positive: 20, Negative: -20 },
-  { month: "11/23", Positive: 15, Negative: -15 },
-  { month: "12/23", Positive: 10, Negative: -10 },
-  { month: "01/24", Positive: 20, Negative: -20 },
-  { month: "02/24", Positive: 15, Negative: -15 },
-  { month: "03/24", Positive: 10, Negative: -10 },
-  { month: "04/24", Positive: 15, Negative: -15 },
-  { month: "05/24", Positive: 20, Negative: -20 },
-  { month: "06/24", Positive: 25, Negative: -25 },
-  { month: "07/24", Positive: 20, Negative: -20 },
-  { month: "08/24", Positive: 15, Negative: -15 },
-  { month: "09/24", Positive: 30, Negative: -30 },
-  { month: "10/24", Positive: 10, Negative: -10 },
-  { month: "11/24", Positive: 20, Negative: -20 },
-  { month: "12/24", Positive: 15, Negative: -15 },
-];
+const TVLGrowthBarChart = (props:any) => {
+  const [chartData, setChartData] = useState(props.data);
+  const [smallData, setSmallData] = useState(props.data.slice(7));
 
-let smallData = [];
-for(var i = chartData.length-1; i > chartData.length-8; i--){
-   smallData.push(chartData[i]);
-}
-
-const TVLGrowthBarChart = () => {
+  useEffect(() => {
+    setChartData(props.data)
+    setSmallData(props.data.slice(7));
+  }, [props])
   return (
     <div
       style={{
@@ -59,7 +27,7 @@ const TVLGrowthBarChart = () => {
       }}
     >
       <div className="flex flex-row justify-end items-center">
-        <span className="text-[10px] mr-2">TVL in Staking Pools</span>
+        <span className="text-[10px] mr-2">TVL Growth Rate(%)</span>
         <button className="border border-[#5851E8] font-bold py-1 px-2 text-[10px] text-transparent bg-clip-text bg-gradient-to-r from-[#5851E8] to-[#D6D3FF]">
           M
         </button>
@@ -72,7 +40,7 @@ const TVLGrowthBarChart = () => {
           >
 
             <XAxis
-              dataKey="month"
+              dataKey="time"
               stroke="#fff" // White text for x-axis
               tickFormatter={(tick) => {
                 // Show year only for specific months (e.g., Jan and Dec)
@@ -87,12 +55,13 @@ const TVLGrowthBarChart = () => {
               stroke="#fff" // White text for y-axis
               tickCount={9} // Number of ticks (to match the step of 10)
             />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: "#333",
-                border: "none",
-                color: "#fff",
-              }}
+            <Tooltip 
+                contentStyle={{ 
+                  backgroundColor: '#777777', // your desired background color
+                  border: '1px solid #3B82F6', // optional border
+                  borderRadius: '8px',         // optional rounded corners
+                  color: '#F3F4F6'             // text color
+                }}
             />
             <Legend
               verticalAlign="bottom"
@@ -105,12 +74,12 @@ const TVLGrowthBarChart = () => {
               )}
             />
             <Bar
-              dataKey="Positive"
+              dataKey="positive"
               fill="rgba(149, 159, 255, 0.8)" // Purple for Positive
               barSize={10} // Adjust bar width
             />
             <Bar
-              dataKey="Negative"
+              dataKey="negative"
               fill="rgba(60, 60, 60, 0.8)" // Darker shade for Negative
               barSize={10} // Adjust bar width
             />
@@ -125,7 +94,7 @@ const TVLGrowthBarChart = () => {
           >
 
             <XAxis
-              dataKey="month"
+              dataKey="time"
               stroke="#fff" // White text for x-axis
               tickFormatter={(tick) => {
                 // Show year only for specific months (e.g., Jan and Dec)
@@ -140,11 +109,12 @@ const TVLGrowthBarChart = () => {
               stroke="#fff" // White text for y-axis
               tickCount={9} // Number of ticks (to match the step of 10)
             />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: "#333",
-                border: "none",
-                color: "#fff",
+           <Tooltip 
+              contentStyle={{ 
+                backgroundColor: '#777777', // your desired background color
+                border: '1px solid #3B82F6', // optional border
+                borderRadius: '8px',         // optional rounded corners
+                color: '#F3F4F6'             // text color
               }}
             />
             <Legend
@@ -158,12 +128,12 @@ const TVLGrowthBarChart = () => {
               )}
             />
             <Bar
-              dataKey="Positive"
+              dataKey="positive"
               fill="rgba(149, 159, 255, 0.8)" // Purple for Positive
               barSize={10} // Adjust bar width
             />
             <Bar
-              dataKey="Negative"
+              dataKey="negative"
               fill="rgba(60, 60, 60, 0.8)" // Darker shade for Negative
               barSize={10} // Adjust bar width
             />

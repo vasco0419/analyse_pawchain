@@ -1,32 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const TransactionTable = () => {
-  const [transactions, setTransactions] = useState([
-    { id: 'pawxg...0dEAd', wallet: 'pawxg...gzw', newName: 'asddd.paw' },
-    { id: 'pawxe...0dEAd', wallet: 'pawxe...xzx', newName: 'dsaw.paw' },
-    { id: 'pawxa...0dEAd', wallet: 'pawxa...0dAA', newName: 'abcws.paw' },
-    { id: 'pawxc...0dEAd', wallet: 'pawxc...EgW', newName: 'aaawa.paw' },
-    { id: 'pawxz...0dEAd', wallet: 'pawxz...0wgZ', newName: 'paaww.paw' },
-    { id: 'pawxc...0dEAd', wallet: 'pawxc...sgw', newName: '7rrd.paw' },
-    { id: 'pawxy...0dEAd', wallet: 'pawxy...e1zf', newName: 'keko.paw' },
-    { id: 'pawxb...0dEAd', wallet: 'pawxb...0gZ', newName: 'joem.paw' },
-    { id: 'pawxj...0dEAd', wallet: 'pawxj...hbgf', newName: 'samss.paw' },
-    { id: 'pawxk...0dEAd', wallet: 'pawxk...7fk4', newName: 'iruea.paw' },
-  ]);
+const TransactionTable = (props: any) => {
+  const [ records, setRecords] = useState(props.data);
 
-  // const [sortOrder, setSortOrder] = useState('asc');
-  // const handleSort = () => {
-  //   const sortedTransactions = [...transactions].sort((a, b) => {
-  //     if (sortOrder === 'asc') {
-  //       return a.newName.localeCompare(b.newName);
-  //     } else {
-  //       return b.newName.localeCompare(a.newName);
-  //     }
-  //   });
-  //   setTransactions(sortedTransactions);
-  //   setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-  // };
+  const transcationNameShowLess = (str: string):string => {
+    return str.substring(0, 5) + "....." + str.substring(str.length - 5, str.length);
+  }
 
+  const walletShowLess = (str: string):string => {
+    return str.substring(0, 8) + "....." + str.substring(str.length - 5, str.length);
+  }
+
+  useEffect(() => {
+    setRecords(props.data);
+  }, [props])
   return (
     <>
         <div className="flex flex-row justify-center items-center md:mb-4 mt-4">
@@ -43,16 +30,16 @@ const TransactionTable = () => {
             <span className="font-bold text-[15px] md:text-[16px]">New Name</span>
         </div>
         
-        { transactions.map((tx, index) => (
+        { records.map((record: any, index: number) => (
           <div key={index} className="flex flex-row justify-between items-center px-3 py-1">
-              <span  className="text-[13px] md:text-[16px]"
+              <a className="text-[13px] md:text-[16px] cursor-point click-box" href={`https://scanner.pawchain.net/tx/${record.txId}`}
                     style={{
                       background: 'linear-gradient(to right, #D3D6FF, #5851E8)',
                       WebkitBackgroundClip: 'text',
                       color: 'transparent',
-                    }}> {tx.id} </span>
-              <span className="text-[13px] md:text-[16px]">{tx.wallet}</span>
-              <span className="text-[13px] md:text-[16px]">{tx.newName}</span>
+                    }}>{transcationNameShowLess(record.txId)}</a>
+              <span className="text-[13px] md:text-[16px]">{walletShowLess(record.walletAddress)}</span>
+              <span className="text-[13px] md:text-[16px]">{record.walletName}</span>
           </div>  
         ))}
     </>

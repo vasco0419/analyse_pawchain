@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BarChart,
   Bar,
@@ -8,21 +8,11 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// Sample data
-const data = [
-  { time: "01/02",  APY: 13 },
-  { time: "02/03",  APY: 5 },
-  { time: "03/04",  APY: 7 },
-  { time: "05/06",  APY: 20 },
-  { time: "07/08",  APY: 14 },
-  { time: "08/09",  APY: 19 },
-  { time: "09/10",  APY: 25 },
-  { time: "10/11",  APY: 21 },
-  { time: "11/12",  APY: 20 },
-  { time: "01/02",  APY: 17 },
-];
-
-const SwapBarChart = () => {
+const SwapBarChart = (props: any) => {
+  const [chartData, setChartData] = useState(props.data);
+  useEffect(() => {
+    setChartData(props.data);
+  }, [props])
   return (
     <div>
       <div className="flex flex-row justify-between items-center mb-5">
@@ -39,7 +29,7 @@ const SwapBarChart = () => {
         </div>
       </div>
       <ResponsiveContainer width="100%" height={300}>
-        <BarChart data={data}
+        <BarChart data={chartData}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -49,7 +39,7 @@ const SwapBarChart = () => {
           </defs>
           <XAxis
               dataKey="time"
-              height={40}
+              height={47}
               tickLine={false}
               tick={{
                 fontSize: 12,
@@ -70,8 +60,15 @@ const SwapBarChart = () => {
               stroke="white"
               strokeWidth={3}  // Set stroke thickness (default is 1)
             />
-          <Tooltip />
-          <Bar type="monotone" dataKey="APY" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+          <Tooltip 
+            contentStyle={{ 
+              backgroundColor: '#1E293B', // your desired background color
+              border: '1px solid #3B82F6', // optional border
+              borderRadius: '8px',         // optional rounded corners
+              color: '#F3F4F6'             // text color
+            }}
+          />
+          <Bar type="monotone" dataKey="Count" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
         </BarChart>
       </ResponsiveContainer>
     </div>

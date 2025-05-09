@@ -120,6 +120,19 @@
     border-radius: inherit;
   }
 
+  .click-box {
+    position: relative;
+  }
+
+  .click-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+    mask-composite: exclude;
+    border-radius: inherit;
+  }
+
   .component-center {
     position: absolute;
     top: 50%;
@@ -151,4 +164,17 @@
     background: linear-gradient(90deg, #5851E8, #D6D3FF);
   }
 
+  .spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 }

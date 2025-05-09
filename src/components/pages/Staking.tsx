@@ -38,7 +38,7 @@ export const Staking = () => {
       </div>
       <div className="hidden md:grid grid-cols-2 gradient-box">
           <span className="col-span-1 text-center text-[24px]">Active Nodes</span>
-          <span className="col-span-1 text-center text-[24px] font-bold">12</span>
+          <span className="col-span-1 text-center text-[24px] font-bold">8</span>
       </div>
       <div className="flex flex-row justify-between items-center gradient-box md:hidden">
           <span className="col-span-1 text-center text-[24px]">Active Nodes</span>

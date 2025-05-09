@@ -3,22 +3,22 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recha
 
 // Sample data (you can adjust the values to match your actual data)
 const data = [
-  { name: "2010", A: 40, B: 20, C: 30},
-  { name: "2011", A: 45, B: 25, C: 35},
-  { name: "2012", A: 40, B: 30, C: 40},
-  { name: "2013", A: 55, B: 35, C: 45},
-  { name: "2014", A: 60, B: 40, C: 50},
-  { name: "2015", A: 65, B: 45, C: 55},
-  { name: "2016", A: 70, B: 50, C: 60},
-  { name: "2017", A: 65, B: 55, C: 65},
-  { name: "2018", A: 80, B: 60, C: 70},
-  { name: "2019", A: 85, B: 65, C: 75},
-  { name: "2020", A: 40, B: 20, C: 30},
-  { name: "2021", A: 45, B: 25, C: 35},
-  { name: "2022", A: 40, B: 30, C: 40},
-  { name: "2023", A: 55, B: 35, C: 45},
-  { name: "2024", A: 60, B: 40, C: 50},
-  { name: "2025", A: 65, B: 45, C: 55}
+  { name: "24/01", A: 40, B: 20, C: 30},
+  { name: "02", A: 45, B: 25, C: 35},
+  { name: "03", A: 40, B: 30, C: 40},
+  { name: "04", A: 55, B: 35, C: 45},
+  { name: "05", A: 60, B: 40, C: 50},
+  { name: "06", A: 65, B: 45, C: 55},
+  { name: "07", A: 70, B: 50, C: 60},
+  { name: "08", A: 65, B: 55, C: 65},
+  { name: "09", A: 80, B: 60, C: 70},
+  { name: "10", A: 85, B: 65, C: 75},
+  { name: "11", A: 40, B: 20, C: 30},
+  { name: "12", A: 45, B: 25, C: 35},
+  { name: "25/01", A: 40, B: 30, C: 40},
+  { name: "02", A: 55, B: 35, C: 45},
+  { name: "03", A: 60, B: 40, C: 50},
+  { name: "04", A: 65, B: 45, C: 55}
 ];
 
 const CustomBar = (props: any) => {
